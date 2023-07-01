@@ -31,7 +31,8 @@ export const Login = () => {
       //asignar nuevos valores al estado global
       dispatch(setUser({
         email: emailValue,
-        password: passwordValue
+        password: passwordValue,
+        logged: true
       })) 
       //guardar en sessionStorage
       &
