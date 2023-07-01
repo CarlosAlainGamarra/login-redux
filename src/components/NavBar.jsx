@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux'
 import { useDispatch} from 'react-redux'
 import { setUser} from '../reducers/user/userSlice'
+import { clearCart} from '../reducers/cart/cartSlice'
 
 //Cart icon
 import cart from '../assets/cart.svg'
@@ -35,6 +36,8 @@ export const NavBar = () => {
                     password: '',
                     logged: false
                   })) 
+                  &
+                  dispatch(clearCart()) 
                   &
                   navigate('/', { replace: true, })
                 }}
