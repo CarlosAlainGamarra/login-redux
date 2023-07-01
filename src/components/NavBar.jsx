@@ -1,5 +1,6 @@
 //Router
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 //Redux
 import { useSelector } from 'react-redux'
@@ -16,6 +17,7 @@ export const NavBar = () => {
   const logged = useSelector(state => state.user.email)
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
 
   return (   
@@ -24,19 +26,21 @@ export const NavBar = () => {
         <Link className="nav-link active" to="/">Home</Link>
         <p className="nav-item mb-0">Hi, {logged? `${logged}` : 'visitor'}</p>
             {!logged?
-              <Link className="nav-link active" to="/login">Login</Link>
-              :<button 
-                className="btn btn-secondary m-1 mb-2"
+              <Link className="nav-link active" to="/login" style={{ color: '#4EFF16'}}>Login</Link>
+              :<div   
+                style={{ color: '#FF1A16', cursor: 'pointer'}}         
                 onClick={() => {
                   dispatch(setUser({
                     email: '',
                     password: '',
                     logged: false
                   })) 
+                  &
+                  navigate('/', { replace: true, })
                 }}
               >
                 Logout
-              </button>
+              </div>
             }                 
         <Link className="nav-link active" to="/addedtocart"><img src={cart} width={30} alt="cart" /> {`(${storedCount})`}</Link>
       </div>

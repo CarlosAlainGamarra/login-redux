@@ -19,7 +19,7 @@ export const Welcome = () => {
     }, 2000)
 
   return (
-    <div>{`Hola, ${userLogged}!`}</div>
+    <div className="text-center"><h3>Hola, {`${userLogged}`}!</h3></div>
   )
 }
 

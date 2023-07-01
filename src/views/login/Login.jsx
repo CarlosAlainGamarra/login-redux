@@ -46,7 +46,8 @@ export const Login = () => {
 
   return (
     <div className='container border border bg-body-secondary mt-5 p-3' style={{width: '70%'}}>
-        <h1>Login</h1>
+        <h1>Login</h1> 
+        <p>use email: tester@redux.com | password:1234567</p>
         <form onSubmit={handleSubmit}>
             <div className='mb-3'>
                 <label className='form-label'>Email</label>
