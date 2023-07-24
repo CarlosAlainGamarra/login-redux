@@ -25,8 +25,8 @@ export const NavBar = () => {
     <nav className="navbar text-bg-dark mb-3" data-bs>
       <div className="container-fluid">
         <Link className="nav-link active" to="/">Home</Link>
-        <p className="nav-item mb-0">Hi, {logged? `${logged}` : 'visitor'}</p>
-            {!logged?
+        {/*<p className="nav-item mb-0">Hi, {logged? `${logged}` : 'visitor'}</p>*/}
+            {/*!logged?
               <Link className="nav-link active" to="/login" style={{ color: '#4EFF16'}}>Login</Link>
               :<div   
                 style={{ color: '#FF1A16', cursor: 'pointer'}}         
@@ -44,7 +44,7 @@ export const NavBar = () => {
               >
                 Logout
               </div>
-            }                 
+              */}                 
         <Link className="nav-link active" to="/addedtocart"><img src={cart} width={30} alt="cart" /> {`(${storedCount})`}</Link>
       </div>
     </nav>
