@@ -7,10 +7,11 @@ import AddedToCart from "./views/addedtocart/AddedToCart"
 //Router
 import { Routes, Route } from 'react-router-dom'
 import NavBar from "./components/NavBar"
-
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
       <NavBar />
       <Routes>
@@ -20,6 +21,7 @@ function App() {
         <Route path='/addedtocart' element={<AddedToCart />} />
       </Routes>
     </div>
+    </BrowserRouter>
   )
 }
 

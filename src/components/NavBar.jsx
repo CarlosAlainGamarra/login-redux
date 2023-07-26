@@ -11,11 +11,10 @@ import { clearCart} from '../reducers/cart/cartSlice'
 //Cart icon
 import cart from '../assets/cart.svg'
 
-
-
 export const NavBar = () => {
   const storedCount = useSelector(state => state.cart.count)
-  const logged = useSelector(state => state.user.email)
+  const logged= useSelector(state => state.user.email)
+  
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -25,10 +24,11 @@ export const NavBar = () => {
     <nav className="navbar text-bg-dark mb-3" data-bs>
       <div className="container-fluid">
         <Link className="nav-link active" to="/">Home</Link>
-        {/*<p className="nav-item mb-0">Hi, {logged? `${logged}` : 'visitor'}</p>*/}
-            {/*!logged?
+        <p className="nav-item mb-0">Hi, {logged? `${logged}` : 'visitor'}</p>
+            {logged !== 'tester@redux.com'?
               <Link className="nav-link active" to="/login" style={{ color: '#4EFF16'}}>Login</Link>
-              :<div   
+              :
+              <div   
                 style={{ color: '#FF1A16', cursor: 'pointer'}}         
                 onClick={() => {
                   dispatch(setUser({
@@ -44,7 +44,13 @@ export const NavBar = () => {
               >
                 Logout
               </div>
-              */}                 
+              
+
+
+
+
+
+              }                 
         <Link className="nav-link active" to="/addedtocart"><img src={cart} width={30} alt="cart" /> {`(${storedCount})`}</Link>
       </div>
     </nav>
